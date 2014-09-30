@@ -23,7 +23,7 @@ while page < 200:
 
     # loop through all the ul tags with the class: "results"
     for tag in cdc.find_all("ul", "results"):
-        links.extend(tag.find_all("li")[0].find_all("li")[2].text.replace("(", "").replace(",", "")replace("-", "").replace(".", "").replace(")", ""). replace(":", "").encode("utf-8").split()) # add the list of links we find for each a tag to the list: links
+        links.extend(tag.find_all("li")[0].find_all("li")[2].text.replace("(", "").replace(",", "").replace("-", "").replace(".", "").replace(")", ""). replace(":", "").encode("utf-8").split()) # add the list of links we find for each a tag to the list: links
 
     # look at the frequencies of each word
     for word in links:
