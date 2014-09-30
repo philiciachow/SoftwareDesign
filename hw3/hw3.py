@@ -16,7 +16,7 @@ x = dict()
 while page < 200:
 
     # download the html for this url and parse it with beautiful soup so we can find tags in the future
-    cdc = soup(urllib2.urlopen("http://www.cdc.gov/search.do?q=" + search + "&amp;ie=utf8&amp;oe=UTF-8&amp;ulang=&amp;sort=date:D:L:d1&amp;entqrm=0&amp;wc=200&amp;wc_mc=1&amp;ud=1&amp;start=" + str(page)).read())
+    cdc = soup(urllib2.urlopen("http://www.cdc.gov/search.do?q=" + search + "&ie=utf8&oe=UTF-8&ulang=&sort=date:D:L:d1&entqrm=0&wc=200&wc_mc=1&ud=1&start=" + str(page)).read())
 
     # create a list to save all the links we find
     links = []
@@ -28,7 +28,7 @@ while page < 200:
     # look at the frequencies of each word
     for word in links:
         x[word] = x.get(word, 0) + 1
-
+ 
     page += 10
 
 # putting frequencies in order from highest to lowest
